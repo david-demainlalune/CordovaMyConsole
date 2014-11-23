@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="ch.demainlalune.myconsole" version="0.0.1">
+    <name>MyConsole</name>
+    <description>console.log that works</description>
+    <license>Apache 2.0</license>
+    <keywords>log</keywords>
+    <js-module src="src/js/myConsole.js" name="myConsole">
+        <clobbers target="myConsole" />
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="MyConsole">
+                <param name="ios-package" value="MyConsole"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/MyConsole.h" />
+        <source-file src="src/ios/MyConsole.m" />
+    </platform>
+</plugin>
